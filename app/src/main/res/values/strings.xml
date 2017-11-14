@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FirstAppTakeTwo</string>
+    <string name="edit_message">1,000,000</string>
+    <string name="button_send">CONVERT</string>
+    <string name="convert_from">CONVERT FROM</string>
+
+    <string name="usd">USD</string>
+    <string name="nzd">NZD</string>
+    <string name="eur">EUR</string>
+    <string name="gbp">GBP</string>
+
+    <string-array name="currencies_array">
+        <item>USD</item>
+        <item>NZD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+    </string-array>
+</resources>
