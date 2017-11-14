@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -87,7 +88,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 TextView text2 = view.findViewById(android.R.id.text2);
 
                 Double val = currencyArray.get(position).value;
-                text1.setText(val.toString());
+                DecimalFormat formatter = new DecimalFormat("###,##0.00");
+                formatter.setDecimalSeparatorAlwaysShown(true);
+                text1.setText(formatter.format(val));
                 text2.setText(currencyArray.get(position).name);
                 return view;
             }
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     protected void getData() {
         requestQueue = Volley.newRequestQueue(this);
-        JsonObjectRequest obreq = new JsonObjectRequest(this.url, null,
+        JsonObjectRequest req = new JsonObjectRequest(this.url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -139,11 +142,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
         );
 
-        requestQueue.add(obreq);
+        requestQueue.add(req);
     }
 
     public void updateListView() {
-        // Get user input from editText.
+        // Convert user input from string to decimal format.
         EditText editText = findViewById(R.id.editText);
         String text = editText.getText().toString();
 
