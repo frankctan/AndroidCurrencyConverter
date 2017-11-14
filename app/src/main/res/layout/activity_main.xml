@@ -40,6 +40,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/convert_from"
         android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,6 +52,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="CONVERT TO"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
