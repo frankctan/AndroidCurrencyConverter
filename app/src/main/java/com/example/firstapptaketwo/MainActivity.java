@@ -26,6 +26,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import com.carnival.sdk.Carnival;
+import com.carnival.sdk.NotificationConfig;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TextWatcher {
 
@@ -48,9 +50,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // boilerplate
+        // Boilerplate.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Connect to Carnival.
+        Carnival.startEngine(this, "6decb4a57343083c4eacd14f7edd38f9629075fb");
+
+        // Configure notification icon.
+        NotificationConfig config = new NotificationConfig();
+        config.setSmallIcon(R.drawable.ic_stat_notification);
+        Carnival.setNotificationConfig(config);
 
         // Configure text changed listener.
         EditText editText = findViewById(R.id.editText);
