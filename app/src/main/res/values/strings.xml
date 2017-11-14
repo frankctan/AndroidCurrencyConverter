@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">FirstAppTakeTwo</string>
-    <string name="edit_message">1,000,000</string>
-    <string name="button_send">CONVERT</string>
+    <string name="edit_message">1.00</string>
     <string name="convert_from">CONVERT FROM</string>
 
     <string name="usd">USD</string>
@@ -15,4 +14,5 @@
         <item>EUR</item>
         <item>GBP</item>
     </string-array>
+    <string name="convert_to">CONVERT TO</string>
 </resources>
