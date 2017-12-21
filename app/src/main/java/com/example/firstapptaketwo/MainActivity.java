@@ -1,5 +1,7 @@
 package com.example.firstapptaketwo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -29,6 +31,7 @@ import java.util.Map;
 import com.carnival.sdk.Carnival;
 import com.carnival.sdk.NotificationConfig;
 
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TextWatcher {
 
     // What are the currency conversion rates?
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Boilerplate.
+        Log.d("testTag: ", "in MainActivity:onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -191,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         updateListView();
+        Log.d("testTag", "MainActivity:onTextChanged");
     }
 
     @Override
