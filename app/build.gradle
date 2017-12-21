@@ -1,4 +1,14 @@
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin' version '0.8.0'
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
 apply plugin: 'com.android.application'
+
 
 android {
     compileSdkVersion 26
@@ -9,6 +19,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [onesignal_app_id: "c82c5518-de2a-43c8-a17e-dfbfafcaa916",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
     }
     buildTypes {
         release {
@@ -34,6 +47,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.carnival.sdk:carnival:5.+'
+    compile 'com.onesignal:OneSignal:[3.6.5, 3.99.99]'
+
 
 }
 repositories {
